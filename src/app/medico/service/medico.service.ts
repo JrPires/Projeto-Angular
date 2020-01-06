@@ -11,5 +11,4 @@ export class MedicoService extends BaseApiService<Medico> {
     super(httpClient, 'medicos');
   }
 
-
 }
