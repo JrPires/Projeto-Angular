@@ -1,0 +1,62 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    Lista de Usuário
+
+    <button mat-icon-button color="primary" routerLink="novo">
+      <mat-icon matTooltip="Cadastrar">add</mat-icon>
+    </button>
+
+
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+<!--<app-diretiva-exemplo></app-diretiva-exemplo>-->
+<!--<app-pipe-exemplo [medicos]="medicos"></app-pipe-exemplo>-->
+<!--<br>-->
+
+<app-ng-content-componet>
+  <div header>header</div>
+  <div class="menu">menu</div>
+  <div conteudo>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dignissimos eum exercitationem expedita facere harum magni necessitatibus, nihil nisi non, pariatur porro tempora? Ducimus necessitatibus provident quis, quod soluta voluptas.</div>
+  <div footer>footer</div>
+</app-ng-content-componet>
+
+<div class="content">
+  <table mat-table [dataSource]="usuarios" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef> nome </th>
+      <td mat-cell *matCellDef="let usuario"> {{ usuario.nome }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> senha </th>
+      <td mat-cell *matCellDef="let usuario"> {{ usuario.senha }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="crm">
+      <th mat-header-cell *matHeaderCellDef> crm </th>
+      <td mat-cell *matCellDef="let usuario"> {{ usuario.confirmar }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="acoes">
+      <th mat-header-cell *matHeaderCellDef>  </th>
+      <td mat-cell *matCellDef="let usuario">
+        <div class="acoes">
+          <button color="warn" mat-flat-button (click)="remover(usuario)">
+            Remover
+          </button>
+
+          <button color="primary" mat-flat-button (click)="editar(usuario)">
+            Editar
+          </button>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+    <tr mat-row *matRowDef="let row; columns: colunas;"></tr>
+  </table>
+</div>
+
