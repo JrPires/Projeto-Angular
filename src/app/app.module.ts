@@ -1,21 +1,35 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MedicoModule} from './medico/medico.module';
-import {PacienteModule} from './paciente/paciente.module';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { UsuarioComponent } from './usuario/usuario.component';
-import { ListarComponent } from './usuario/listar/listar/listar.component';
+import { FormComponent } from './usuario/form/form.component';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatInputModule, MatMenuModule,
+  MatProgressSpinnerModule,
+  MatSidenavModule
+} from '@angular/material';
+import { ListarComponent } from './paciente/listar/listar.component';
+import { NgContentComponetComponent } from './medico/components/ng-content-componet/ng-content-componet.component';
+import { SharedModule } from './shared/shared.module';
+import { MenuComponent } from './menu/menu.component';
+import { UsuarioModule } from './usuario/usuario-modulo';
+import { PacienteModule } from './paciente/paciente.module';
+import { MenuModule } from './menu/menu.module';
 
-@NgModule({
+
+@NgModule( {
   declarations: [
     AppComponent,
-    UsuarioComponent,
-    ListarComponent
+    MenuComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -23,8 +37,22 @@ import { ListarComponent } from './usuario/listar/listar/listar.component';
     BrowserAnimationsModule,
     HttpClientModule,
     MedicoModule,
-    FormsModule
+    UsuarioModule,
+    MenuModule,
+    FormsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatProgressSpinnerModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatSidenavModule,
+    SharedModule,
+    MatMenuModule,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ]
+
 })
 export class AppModule { }

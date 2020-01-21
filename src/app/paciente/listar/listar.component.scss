@@ -1,0 +1,19 @@
+.content {
+    margin: 20px;
+  }
+  table {
+    width: 100%;
+  }
+  
+  .acoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  
+  .mat-toolbar-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  

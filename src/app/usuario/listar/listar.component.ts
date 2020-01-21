@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Medico} from '../../medico/model/medico';
-import {MedicoService} from '../../medico/service/medico.service';
-import {Router} from '@angular/router';
-import {Usuario} from '../model/usuario';
+import { Router } from '@angular/router';
+import { Usuario } from '../model/usuario';
+import { UsuarioService } from '../service/usuario.service';
 
 @Component({
   selector: 'app-listar',
@@ -11,9 +10,9 @@ import {Usuario} from '../model/usuario';
 })
 export class ListarComponent implements OnInit {
   public usuarios: Usuario[];
-  colunas: string[] = ['nome', 'senha', 'confirmar'];
+  colunas: string[] = ['nome', 'dataNascimento', 'email'];
 
-  constructor(private medicoService: MedicoService,
+  constructor(private usuarioService: UsuarioService,
               private router: Router) { }
 
   ngOnInit() {
@@ -24,18 +23,18 @@ export class ListarComponent implements OnInit {
   }
 
   atualizar(): void {
-    this.medicoService.listar()
-      .subscribe(medicos => {
-        this.medicos = medicos;
+    this.usuarioService.listar()
+      .subscribe(usuarios => {
+        this.usuarios = this.usuarios;
       });
   }
 
-  editar({ id }: Medico): void {
+  editar({ id }: Usuario): void {
     this.router.navigate(['editar', id]);
   }
 
-  remover({ id }: Medico): void {
-    this.medicoService.remover(id)
+  remover({ id }: Usuario): void {
+    this.usuarioService.remover(id)
       .subscribe(() => this.atualizar());
   }
 }

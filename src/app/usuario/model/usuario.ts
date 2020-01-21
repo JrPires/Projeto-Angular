@@ -1,5 +1,8 @@
 export class Usuario {
-  nome: string;
-  senha: string;
-  confirmar: string;
+  id?: number;
+  nome?: string;
+  dataNascimento: Date = null;
+  email?: string;
+  senha?: string;
+  confirmarSenha?: string;
 }

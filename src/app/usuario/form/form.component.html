@@ -1,0 +1,77 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    Cadastro de Usuário
+    
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="edit">
+  <form class="mat-elevation-z3" (ngSubmit)="enviar()">
+
+    
+    <mat-form-field>
+      <input type="text"
+             matInput
+             placeholder="Nome"
+             name="nome"
+             formControlName="nome">
+    </mat-form-field>
+   
+    <mat-form-field>
+      <input type="text"
+             matInput
+             placeholder="Data Nascimento"
+             name="dataNascimento"
+             formControlName="dataNascimento">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="text"
+             matInput
+             placeholder="Email"
+             formControlName="email"
+             name="email">
+
+
+      <!-- <mat-error *ngIf="email.errors?.emailInvalido">
+        Email inválido {{email.errors?.emailInvalido.descricao}}
+      </mat-error> -->
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="text"
+             matInput
+             placeholder="Senha"
+             name="senha"
+             formControlName="senha"
+      >
+
+
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="text"
+             matInput
+             placeholder="Confirmar Senha"
+             name="confirmarSenha"
+             formControlName="confirmarSenha"
+      >
+
+
+    </mat-form-field>
+  
+
+    <div class="action">
+      <button mat-raised-button type="submit" color="primary">
+        Enviar
+      </button>
+    </div>
+
+  </form>
+
+</div>
+
+
+
+
+

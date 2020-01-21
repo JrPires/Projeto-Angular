@@ -1,8 +1,7 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {MedicoService} from '../../service/medico.service';
-import {Router} from '@angular/router';
-import {Medico} from '../../model/medico';
-import {Subscription} from 'rxjs/src/internal/Subscription';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { MedicoService } from '../../service/medico.service';
+import { Router } from '@angular/router';
+import { Medico } from '../../model/medico';
 
 @Component({
   selector: 'app-listar',
@@ -25,8 +24,8 @@ export class ListarComponent implements OnInit, OnDestroy {
 
   atualizar(): void {
     this.medicoService.listar()
-      .subscribe(medicos => {
-      this.medicos = medicos;
+      .subscribe(medico => {
+        this.medicos = this.medicos;
     });
   }
 

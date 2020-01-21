@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {Medico} from '../../model/medico';
-import {FormBuilder, FormGroup, NgForm, Validators} from '@angular/forms';
-import {MedicoService} from '../../service/medico.service';
-import {Validacoes} from '../../../shared/validacoes';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Medico } from '../../model/medico';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MedicoService } from '../../service/medico.service';
+import { Validacoes } from '../../../shared/validacoes';
 
 @Component({
   selector: 'app-editar',

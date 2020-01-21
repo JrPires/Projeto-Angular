@@ -5,7 +5,7 @@ import {
   MatCardModule,
   MatFormFieldModule,
   MatIconModule,
-  MatInputModule,
+  MatInputModule, MatMenuModule,
   MatTableModule,
   MatToolbarModule, MatTooltipModule
 } from '@angular/material';
@@ -13,6 +13,8 @@ import { CorDirective } from './cor.directive';
 import { MultiplicarPipe } from './multiplicar.pipe';
 import { ParesPipe } from './pares.pipe';
 import { FiltroPipe } from './filtro.pipe';
+import { MenuComponent } from '../menu/menu.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [CorDirective, MultiplicarPipe, ParesPipe, FiltroPipe],
@@ -25,7 +27,9 @@ import { FiltroPipe } from './filtro.pipe';
     MatInputModule,
     MatCardModule,
     MatIconModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatMenuModule,
+    RouterModule
   ],
   exports: [
     CommonModule,
@@ -40,7 +44,8 @@ import { FiltroPipe } from './filtro.pipe';
     CorDirective,
     MultiplicarPipe,
     ParesPipe,
-    FiltroPipe
+    FiltroPipe,
+    
   ]
 })
 export class SharedModule { }

@@ -1,17 +1,23 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PacienteRoutingModule } from './paciente-routing.module';
+import { SharedModule } from '../shared/shared.module';
+import { FormComponent } from './form/form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListarComponent } from './listar/listar.component';
-import {PacienteRoutingModule} from './paciente-routing.module';
-import {SharedModule} from '../shared/shared.module';
-
 
 
 @NgModule({
-  declarations: [ListarComponent],
+  declarations: [FormComponent, ListarComponent],
   imports: [
     CommonModule,
     SharedModule,
-    PacienteRoutingModule
+    PacienteRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
   ]
 })
 export class PacienteModule { }

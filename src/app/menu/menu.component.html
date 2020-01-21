@@ -1,0 +1,18 @@
+<!-- <router-outler></router-outler> -->
+<button mat-button [matMenuTriggerFor]="aboveMenu">Médico</button>
+<mat-menu #aboveMenu="matMenu" yPosition="above">
+  <button mat-menu-item routerLink="medico/novo">Cadastrar</button>
+  <button mat-menu-item routerLink="medico/listar">Listar</button>
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="belowMenu">Paciente</button>
+<mat-menu #belowMenu="matMenu" yPosition="below">
+  <button mat-menu-item routerLink="paciente">Cadastrar</button>
+  <button mat-menu-item routerLink="paciente/listar">Listar</button>
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="beforeMenu">Usuário</button>
+<mat-menu #beforeMenu="matMenu" xPosition="before">
+  <button mat-menu-item routerLink="usuario/novo">Cadastrar</button>
+  <button mat-menu-item routerLink="usuario/listar">Listar</button>
+</mat-menu>
